@@ -6,10 +6,25 @@ export default Ember.Controller.extend({
 
   actions: {
     authenticate() {
-      let { identification, password } = this.getProperties('identification', 'password');
-      this.get('session').authenticate('authenticator:devise', identification, password).catch((reason) => {
-        this.set('errorMessage', reason.error || reason);
-      });
+    	console.log("[DEBUG] controllers/login.js::authenticate");
+		// let { identification, password } = this.getProperties('identification', 'password');
+		// console.log("[DEBUG] identification = "+identification);
+		// console.log("[DEBUG] password = "+password);
+
+		var promise = this.get('session').authenticate('authenticator:devise', "test@test.com", "password").catch((reason) => {
+		this.set('errorMessage', reason.error || reason);
+		});
+
+		promise.then(fulfill, reject);
+
+		function fulfill(answer) {
+		  console.log('The answer is ' + answer);
+		}
+
+		function reject(reason) {
+		  console.log("Couldnt get the answer! Reason: "+reason);
+		}
+		
     }
   }
 });

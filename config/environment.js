@@ -20,7 +20,8 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise'
+    authorizer: 'simple-auth-authorizer:devise',
+    crossOriginWhitelist: ['https://orunginal-api.herokuapp.com/']
   }
 
   ENV['simple-auth-devise'] = {
