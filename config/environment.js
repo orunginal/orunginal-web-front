@@ -19,15 +19,24 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise',
-    crossOriginWhitelist: ['https://orunginal-api.herokuapp.com/']
-  }
+  // ENV['simple-auth'] = {
+  //   authorizer: 'simple-auth-authorizer:devise',
+  //   crossOriginWhitelist: ['https://orunginal-api.herokuapp.com/']
+  // }
 
-  ENV['simple-auth-devise'] = {
-    tokenAttributeName: 'token',
-    identificationAttributeName: 'email'
-  }
+  // ENV['simple-auth-devise'] = {
+  //   tokenAttributeName: 'token',
+  //   identificationAttributeName: 'email'
+  // }
+
+  ENV['simple-auth'] = {
+    //store: 'simple-auth-session-store:local-storage',
+    authorizer: 'authorizer:custom',
+    authenticator: 'authenticator:custom',
+    crossOriginWhitelist: ['http://localhost:3001/'],
+    //routeAfterAuthentication: '/protected'
+  };
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

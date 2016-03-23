@@ -3,15 +3,16 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
+  authenticator: 'authenticator:custom',
 
   actions: {
     authenticate() {
     	console.log("[DEBUG] controllers/login.js::authenticate");
-		// let { identification, password } = this.getProperties('identification', 'password');
+		let { identification, password } = this.getProperties('identification', 'password');
 		// console.log("[DEBUG] identification = "+identification);
 		// console.log("[DEBUG] password = "+password);
 
-		var promise = this.get('session').authenticate('authenticator:devise', "test@test.com", "password").catch((reason) => {
+		var promise = this.get('session').authenticate('authenticator:custom', identification, password).catch((reason) => {
 		this.set('errorMessage', reason.error || reason);
 		});
 
