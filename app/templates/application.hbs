@@ -1,3 +1,16 @@
 <h1 id="title">Welcome to application.hbs</h1>
 
+{{#if session.isAuthenticated}}
+<h2 id="title">Welcome to Ember.js - Home!</h2>
+
+  Hi, {{session.email}}
+  <br/>
+  You can't see this text unless you're logged in!
+  <br/>
+  Click this button to logout:
+  <button {{action "invalidateSession"}}>Logout</button>
+{{else}}
+  {{#link-to "login"}}Login{{/link-to}}
+{{/if}}
+
 {{outlet}}
