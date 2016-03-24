@@ -30,6 +30,8 @@ export default Base.extend({
                 contentType: 'application/json;charset=utf-8',
                 dataType: 'json'
             }).then(function(response) {
+                console.log("response");
+                console.log(response);
                 Ember.run(function() {
                     resolve({
                         token: response.id_token
@@ -39,6 +41,8 @@ export default Base.extend({
                 console.log("status : "+status);
                 console.log("error : "+error);
                 var response = xhr.responseText;
+                console.log("response");
+                console.log(response);
                 Ember.run(function() {
                     reject(response);
                 });

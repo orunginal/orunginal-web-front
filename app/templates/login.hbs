@@ -13,3 +13,9 @@
     <button type="submit">Log in</button>
   </div>
 </form>
+
+{{#if errorMessage}} 
+    <div class="alert alert-danger"> 
+      <strong>Login failed:</strong> {{errorMessage}} 
+    </div> 
+{{/if}}
