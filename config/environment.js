@@ -33,7 +33,7 @@ module.exports = function(environment) {
     //store: 'simple-auth-session-store:local-storage',
     authorizer: 'authorizer:custom',
     authenticator: 'authenticator:custom',
-    crossOriginWhitelist: ['http://localhost:3001/'],
+    crossOriginWhitelist: ['https://orunginal-api.herokuapp.com/'],
     //routeAfterAuthentication: '/protected'
   };
 

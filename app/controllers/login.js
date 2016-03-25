@@ -27,8 +27,8 @@ export default Ember.Controller.extend({
 				// 	Succes
 			},
 
-			function (reason) {
-			  	console.log("Couldnt get the answer! Reason: "+reason);
+			function (error) {
+			  	console.log("Couldnt get the answer! Reason: "+error);
 			}
 		);
 		

@@ -3,7 +3,8 @@ import Base from 'ember-simple-auth/authenticators/base';
 
 export default Base.extend({
     //tokenEndpoint: 'http://localhost:3001/sessions/create',
-    tokenEndpoint: 'https://orunginal-api.herokuapp.com/users/sign_in',
+    tokenEndpoint: 'http://node-test-backend.herokuapp.com/sessions/create',
+    //tokenEndpoint: 'https://orunginal-api.herokuapp.com/users/sign_in',
     restore: function(data) {
         console.log("[DEBUG:authenticators/custom.js::restore]");
         return new Ember.RSVP.Promise(function(resolve, reject) {
@@ -19,22 +20,26 @@ export default Base.extend({
         console.log("[DEBUG] identification = "+identification);
         console.log("[DEBUG] password = "+password);
         console.log("[DEBUG:authenticators/custom.js::authenticate]");
+
         return new Ember.RSVP.Promise((resolve, reject) => {
             Ember.$.ajax({
                 url: this.tokenEndpoint,
                 type: 'POST',
-                user: JSON.stringify({
-                    email: identification,
-                    password: password
-                }),
                 contentType: 'application/json;charset=utf-8',
-                dataType: 'json'
+                dataType: 'jsonp', //    Allow cross origin
+                // jsonpCallback: 'jsonCallback', // to specify the value
+                data: {
+                    user: {
+                        email: identification,
+                        password: password
+                    }
+                }
             }).then(function(response) {
                 console.log("response");
                 console.log(response);
                 Ember.run(function() {
                     resolve({
-                        token: response.id_token
+                        token: response.token
                     });
                 });
             }, function(xhr, status, error) {
