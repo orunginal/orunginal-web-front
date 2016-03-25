@@ -8,7 +8,8 @@ export default Ember.Controller.extend({
   actions: {
     authenticate() {
     	console.log("[DEBUG] controllers/login.js::authenticate");
-		let { identification, password } = this.getProperties('identification', 'password');
+
+		//let { identification, password } = this.getProperties('identification', 'password');
 		// console.log("[DEBUG] identification = "+identification);
 		// console.log("[DEBUG] password = "+password);
 
@@ -17,20 +18,21 @@ export default Ember.Controller.extend({
 			this.set('errorMessage', undefined);
 		}
 		
-		var promise = this.get('session').authenticate('authenticator:custom', identification, password).catch((reason) => {
+		var promise = this.get('session').authenticate('authenticator:custom', "test@test.com", "password").catch((reason) => {
 		this.set('errorMessage', reason.error || reason);
 		});
 
-		promise.then(fulfill, reject);
+		promise.then(
+			function () {
+				// 	Succes
+			},
 
-		function fulfill(answer) {
-			console.log('The answer is ' + answer);
-		}
-
-		function reject(reason) {
-		  	console.log("Couldnt get the answer! Reason: "+reason);
-		}
+			function (reason) {
+			  	console.log("Couldnt get the answer! Reason: "+reason);
+			}
+		);
 		
+
     }
   }
 });
