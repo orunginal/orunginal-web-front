@@ -5,6 +5,6 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
 	beforeModel(transition) {
 		this._super(transition);
 
-		
+		console.log('beforeModel routes/login.js !!!!');
 	}
 });

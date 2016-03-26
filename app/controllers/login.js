@@ -1,5 +1,4 @@
 import Ember from 'ember';
-// import LoginControllerMixin from 'ember-simple-auth/mixins/login-controller-mixin';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service('session'),
@@ -17,7 +16,7 @@ export default Ember.Controller.extend({
 		if (this.get('errorMessage')) {
 			this.set('errorMessage', undefined);
 		}
-		
+
 		var _this = this;
 
 		var promise = this.get('session').authenticate('authenticator:custom', "test@test.com", "password").catch((reason) => {
