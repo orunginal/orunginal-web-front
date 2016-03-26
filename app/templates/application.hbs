@@ -1,16 +1,11 @@
-<h1 id="title">Bienvenu sur application.hbs</h1>
+<h1 id="title">Bienvenu sur Orunginal [application.hbs]</h1>
 
 {{#if session.isAuthenticated}}
-
-  Hi, {{session.email}}
-  <br/>
-  You can't see this text unless you're logged in!
-  <br/>
-  Click this button to logout:
-  <button {{action "invalidateSession"}}>Logout</button>
+  	<button {{action "invalidateSession"}}>Logout</button>
 {{else}}
-  {{#link-to "login"}}Login{{/link-to}}
+   	{{#link-to "login"}}
+   		<button>Login</button>
+  	{{/link-to}}
 {{/if}}
-
 
 {{outlet}}

@@ -24,12 +24,12 @@ export default Ember.Controller.extend({
 		});
 
 		promise.then(
-			function () {
+			() => {
 				// 	Succes, redirect to dashboard
 				_this.transitionToRoute('user.dashboard');
 			},
 
-			function (error) {
+			(error) => {
 			  	console.log("Couldnt get the answer! Reason: "+error);
 			}
 		);
