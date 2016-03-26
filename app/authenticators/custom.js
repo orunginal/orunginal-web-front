@@ -2,8 +2,8 @@ import Ember from 'ember';
 import Base from 'ember-simple-auth/authenticators/base';
 
 export default Base.extend({
-    //tokenEndpoint: 'http://localhost:3001/sessions/create',
-    tokenEndpoint: 'http://node-test-backend.herokuapp.com/sessions/create',
+    tokenEndpoint: 'http://localhost:3001/sessions/create',
+    //tokenEndpoint: 'http://node-test-backend.herokuapp.com/sessions/create',
     //tokenEndpoint: 'https://orunginal-api.herokuapp.com/users/sign_in',
     restore: function(data) {
         console.log("[DEBUG:authenticators/custom.js::restore]");
@@ -39,7 +39,8 @@ export default Base.extend({
                 console.log(response);
                 Ember.run(function() {
                     resolve({
-                        token: response.token
+                        token: response.token,
+                        email: response.email
                     });
                 });
             }, function(xhr, status, error) {

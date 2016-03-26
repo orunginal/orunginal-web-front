@@ -17,6 +17,7 @@ export default Ember.Controller.extend({
 		if (this.get('errorMessage')) {
 			this.set('errorMessage', undefined);
 		}
+		
 		var _this = this;
 
 		var promise = this.get('session').authenticate('authenticator:custom', "test@test.com", "password").catch((reason) => {
@@ -26,7 +27,6 @@ export default Ember.Controller.extend({
 		promise.then(
 			function () {
 				// 	Succes, redirect to dashboard
-				console.log('transitionTo : /user/dashboard');
 				_this.transitionToRoute('user.dashboard');
 			},
 
