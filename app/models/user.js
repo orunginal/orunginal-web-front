@@ -14,6 +14,9 @@ export default DS.Model.extend({
     	return "${this.get('firstName')} ${this.get('lastName')}";
   	}),
   	urlphoto: DS.attr('string'),
-  	createdat: DS.attr('date')
+  	createdat: DS.attr('date'),
+
+  	//	Relationships
+  	circuits: DS.hasMany('circuit')
 
 });
