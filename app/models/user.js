@@ -18,5 +18,5 @@ export default DS.Model.extend({
 
   	//	Relationships
   	circuits: DS.hasMany('circuit'),
-  	group: DS.belongsTo('group')
+  	groups: DS.hasMany('group')
 });
