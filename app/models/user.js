@@ -17,6 +17,6 @@ export default DS.Model.extend({
   	createdat: DS.attr('date'),
 
   	//	Relationships
-  	circuits: DS.hasMany('circuit')
-
+  	circuits: DS.hasMany('circuit'),
+  	group: DS.belongsTo('group')
 });

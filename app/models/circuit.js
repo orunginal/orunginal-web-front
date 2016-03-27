@@ -2,7 +2,7 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  idcircuit: DS.attr('string'),
+  idcircuit: DS.attr('number'),
   distance: DS.attr('number'),
   note: DS.attr('number'),
   description: DS.attr('string'),
