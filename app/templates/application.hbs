@@ -21,20 +21,26 @@
         <li>{{#link-to "index"}}<a class="menu-li">Contact</a>{{/link-to}}</li>
         
         {{#if session.isAuthenticated}}
-  		  	<li>{{#link-to "user.dashboard"}}<a class="menu-li">Dashboard</a>{{/link-to}}</li>
-  		  	<li><a href="" class="menu-li" {{action "invalidateSession"}}>Déconnection</a></li>
+          <!-- User Account -->
+          <li class="dropdown user user-menu">{{#link-to "user.dashboard"}}
+              <img src="assets/img/quentin.jpg" class="user-image" alt="User Image">
+              <a  class="menu-li">Quentin Bayart</a>{{/link-to}}
+          </li>
+  		  	<li><a href="" class="menu-li" {{action "invalidateSession"}}>Déconnexion</a></li>
     		{{else}}
-    			<li>{{#link-to "login"}}<a class="menu-li">Connection</a>{{/link-to}}</li>
+    			<li>{{#link-to "login"}}<a class="menu-li">Connexion</a>{{/link-to}}</li>
     			<li>{{#link-to "login"}}<a class="menu-li">Inscription</a>{{/link-to}}</li>
     		{{/if}}
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
-
 {{outlet}}
 
+<!-- Footer
+==========================================-->
 <nav id="footer">
   <div class="container">
       <div class="pull-left fnav">
