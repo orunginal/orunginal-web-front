@@ -11,22 +11,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="">Orunginal</a>
+      {{#link-to "index"}}<a class="navbar-brand">Orunginal</a>{{/link-to}}
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li>{{#link-to "index"}}<a>Accueil</a>{{/link-to}}</li>
-        <li>{{#link-to "index"}}<a>Contact</a>{{/link-to}}</li>
+        <li>{{#link-to "index"}}<a class="menu-li">Accueil</a>{{/link-to}}</li>
+        <li>{{#link-to "index"}}<a class="menu-li">Contact</a>{{/link-to}}</li>
         
         {{#if session.isAuthenticated}}
-		  	<li>{{#link-to "user.dashboard"}}<a>Dashboard</a>{{/link-to}}</li>
-		  	<li><a{{action "invalidateSession"}} href="">Déconnection</a></li>
-		{{else}}
-			<li>{{#link-to "login"}}<a>Connection</a>{{/link-to}}</li>
-			<li>{{#link-to "login"}}<a>Inscription</a>{{/link-to}}</li>
-		{{/if}}
+  		  	<li>{{#link-to "user.dashboard"}}<a class="menu-li">Dashboard</a>{{/link-to}}</li>
+  		  	<li><a href="" class="menu-li" {{action "invalidateSession"}}>Déconnection</a></li>
+    		{{else}}
+    			<li>{{#link-to "login"}}<a class="menu-li">Connection</a>{{/link-to}}</li>
+    			<li>{{#link-to "login"}}<a class="menu-li">Inscription</a>{{/link-to}}</li>
+    		{{/if}}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -35,17 +35,18 @@
 
 {{outlet}}
 
-<!-- 
-<div class="container">
-    <div class="pull-left fnav">
-        <p>ALL RIGHTS RESERVED. COPYRIGHT © 2014. Designed by <a href="https://dribbble.com/shots/1817781--FREEBIE-Spirit8-Digital-agency-one-page-template">Robert Berki</a> and Coded by <a href="https://dribbble.com/jennpereira">Jenn Pereira</a></p>
-    </div>
-    <div class="pull-right fnav">
-        <ul class="footer-social">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        </ul>
-    </div>
-</div> -->
+<nav id="footer">
+  <div class="container">
+      <div class="pull-left fnav">
+          <p>ALL RIGHTS RESERVED. COPYRIGHT © 2016. </p>
+      </div>
+      <div class="pull-right fnav">
+          <ul class="footer-social">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-github"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          </ul>
+      </div>
+  </div>
+</nav>

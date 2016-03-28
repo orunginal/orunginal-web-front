@@ -1,8 +1,10 @@
-a {
-	color:grey;
-}
 
 /* Navigation */
+.menu-li{
+	text-decoration: none !important;
+	color: grey !important;
+}
+
 #tf-menu {
 	padding: 20px;
 	transition: all 0.8s;
@@ -31,7 +33,7 @@ font-weight: 900;
 .navbar-default .navbar-nav > .active > a, 
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
-	color: #FCAC45 !important;
+	color: #FCAC45 !important; /*orange*/
 	background-color: transparent;
 	font-weight: 700;
 }
@@ -116,4 +118,46 @@ a.fa.fa-angle-down:hover{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */
 	height: 750px;
 	background-attachment: fixed;
+}
+
+/* Footer */
+nav#footer{
+	background: #222222;
+	color: #ffffff;
+	padding: 20px 0 15px 0;
+}
+nav#footer .fnav{ vertical-align: middle;}
+ul.footer-social li{
+	display: inline-block;
+	margin-right: 10px;
+}
+nav#footer p{
+	font-size: 12px;
+	margin-top: 10px;
+}
+#footer i.fa {
+	height: 30px;
+	width: 30px;
+	border: 2px solid #8c8c8c;
+	font-size: 20px;
+	padding: 4px 5px;
+	border-radius: 50%;
+	color: #8c8c8c;
+	transition: all 0.5s;
+}
+#footer i.fa:hover{
+	background: #FCAC45;
+	border-color: #FCAC45;
+	color: #ffffff;
+}
+
+.fa-twitter:before {
+  content: "\f099";
+}
+.fa-facebook-f:before,
+.fa-facebook:before {
+  content: "\f09a";
+}
+.fa-github:before {
+  content: "\f09b";
 }
