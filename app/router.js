@@ -18,6 +18,7 @@ Router.map(function() {
     this.route('users');
   });
   this.route('contact');
+  this.route('inscription');
 });
 
 export default Router;

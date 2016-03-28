@@ -2999,8 +2999,8 @@ table.text-center th {
 .widget-user .widget-user-image {
   position: absolute;
   bottom: 70px;
-  left: 48%;
-  margin-left: -45px;
+  left: 49%;
+  margin-left: -48px;
 }
 .widget-user .widget-user-image > img {
   width: 130px;
