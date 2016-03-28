@@ -13,7 +13,7 @@ export default Ember.Route.extend({
 		});
 
 	    Ember.$(window).bind('scroll', function() {
-	        var navHeight = $(window).height() - 70;
+	        var navHeight = Ember.$(window).height() - 70;
 	        if (Ember.$(window).scrollTop() > navHeight) {
 	            Ember.$('.navbar-default').addClass('on');
 	        } else {
