@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>{{#link-to "index"}}<a class="menu-li">Accueil</a>{{/link-to}}</li>
-        <li>{{#link-to "index"}}<a class="menu-li">Contact</a>{{/link-to}}</li>
+        <li>{{#link-to "contact"}}<a class="menu-li">Contact</a>{{/link-to}}</li>
         
         {{#if session.isAuthenticated}}
           <!-- User Account -->
@@ -36,6 +36,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 
 {{outlet}}
 

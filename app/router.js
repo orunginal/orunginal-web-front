@@ -13,10 +13,11 @@ Router.map(function() {
   this.route('user', function() {
     this.route('dashboard');
   });
-  
+
   this.route('admin', function() {
     this.route('users');
   });
+  this.route('contact');
 });
 
 export default Router;
