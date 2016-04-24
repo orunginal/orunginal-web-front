@@ -5,9 +5,16 @@ export default Base.extend({
     authorize: function(jqXHR, requestOptions) {
     	console.log("[DEBUG:authorizers/custom.js::authorize]");
     	console.log("requestOptions : "+requestOptions);
-        var accessToken = this.get('session.content.secure.token');
+    	requestOptions.contentType = 'application/json;charset=utf-8';
+	    requestOptions.crossDomain = true;
+	    requestOptions.xhrFields = {
+	      	withCredentials: true
+	    };
+
+        var accessToken = this.get('session.token');
         if (this.get('session.isAuthenticated') && !Ember.isEmpty(accessToken)) {
-            jqXHR.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+            jqXHR.setRequestHeader('Authorization', 'token ' + accessToken);
+            //jqXHR.setRequestHeader('X-CSRF-Token', accessToken);
         }
     }
 });

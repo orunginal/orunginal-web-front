@@ -1,20 +1,48 @@
 import Ember from 'ember';
+import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend({  
+export default Ember.Route.extend(AuthenticatedRouteMixin, { 
 	session: Ember.inject.service(),
 
 	model() {
-		return [{
-			'id': this.get('session.id'),
-			'email': this.get('session.email'),
-			'token': this.get('session.token')
-		}];
+		// $.ajaxSetup({
+		//   crossDomain: true,
+		//   xhrFields: {
+		//     withCredentials: true
+		//   }
+		// });
+		console.log('Fetching user..');
+		console.log(this.get('session.user_id'));
+		var user = this.store.findRecord('user', 11);
+
+		user.then((value) => {
+		  	// on fulfillment
+		  	console.log('Sucess :',value);
+		}, (reason) => {
+		  	// on rejection
+		  	console.log('Fail :',reason);
+		});
+		if (false)
+		{
+			console.log(user);
+			return user;
+		}
+		else
+		{
+			return [{
+				'user_id': this.get('session.user_id'),
+				'email': this.get('session.email'),
+				'token': this.get('session.token'),
+				'is_admin': this.get('session.is_admin')
+			}];
+		}
+		
 	},
-	
+
 	beforeModel(transition) {
 
 		//	Check if user isAuthenticated
-		var isAuthenticated = this.get('session').get('isAuthenticated');
+		var isAuthenticated = this.get('session.isAuthenticated');
 		if(isAuthenticated === false){
 			transition.abort();
 			this.transitionTo('');
@@ -30,4 +58,8 @@ export default Ember.Route.extend({
 			Ember.$('.navbar-default').addClass('on');
 		});
 	}
+
+	// afterModel() {
+	// 	console.log(model());
+	// }
 });

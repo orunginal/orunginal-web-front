@@ -14,7 +14,7 @@ export default Base.extend({
                 Ember.run(function() {
                     resolve(data);
                 });
-                _this.get('session').set('id', data.id);
+                _this.get('session').set('user_id', data.id);
                 _this.get('session').set('token', data.token);
                 _this.get('session').set('email', data.email);
                 _this.get('session').set('is_admin', data.is_admin);
@@ -42,18 +42,19 @@ export default Base.extend({
                 beforeSend: (request) => {
                     request.setRequestHeader('Accept', 'application/json');
                 },
+                crossDomain: true,
                 dataType: 'json' 
                 
             }).then((response) => {
                 this.get('session').set('token',response.data.token);
-                this.get('session').set('id',response.data.id);
+                this.get('session').set('user_id',response.data.id);
                 this.get('session').set('email',response.data.email);
                 this.get('session').set('is_admin',response.data.is_admin);
                 Ember.run(function() {
                     resolve({
                         token: response.data.token,
                         email: response.data.email,
-                        id: response.data.id,
+                        user_id: response.data.id,
                         is_admin: response.data.is_admin
                     });
                 });
