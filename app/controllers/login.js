@@ -28,8 +28,14 @@ export default Ember.Controller.extend({
 				//	TODO !!!
 				// var user = _this.store.findRecord('users',_this.get('session.id'))
 
-				// 	Succes, redirect to dashboard
-				_this.transitionToRoute('user.dashboard');
+				if (_this.get('session.is_admin') === true)
+				{
+					_this.transitionToRoute('user.dashboard.admin');
+				}
+				else
+				{
+					_this.transitionToRoute('user.dashboard.customer');
+				}
 			},
 
 			(error) => {

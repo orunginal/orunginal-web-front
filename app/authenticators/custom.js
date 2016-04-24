@@ -17,6 +17,7 @@ export default Base.extend({
                 _this.get('session').set('id', data.id);
                 _this.get('session').set('token', data.token);
                 _this.get('session').set('email', data.email);
+                _this.get('session').set('is_admin', data.is_admin);
             } else {
                 reject();
             }
@@ -47,11 +48,13 @@ export default Base.extend({
                 this.get('session').set('token',response.data.token);
                 this.get('session').set('id',response.data.id);
                 this.get('session').set('email',response.data.email);
+                this.get('session').set('is_admin',response.data.is_admin);
                 Ember.run(function() {
                     resolve({
                         token: response.data.token,
                         email: response.data.email,
-                        id: response.data.id
+                        id: response.data.id,
+                        is_admin: response.data.is_admin
                     });
                 });
             }, (xhr, status, error) => {

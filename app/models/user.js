@@ -5,7 +5,7 @@ export default DS.Model.extend({
 	iduser: DS.attr('number'),
 	//	Connection info
 	email: DS.attr('string'),
-	isadmin: DS.attr('boolean', { defaultValue: false }), //	Will transform string to bool
+	is_admin: DS.attr('boolean', { defaultValue: false }), //	Will transform string to bool
 
 	// 	Personal info
   	firstname: DS.attr('string'),
