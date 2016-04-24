@@ -20,11 +20,14 @@ export default Ember.Controller.extend({
 		var _this = this;
 
 		var promise = this.get('session').authenticate('authenticator:custom', "test@test.com", "password").catch((reason) => {
-		this.set('errorMessage', reason.error || reason);
+			this.set('errorMessage', reason.error || reason);
 		});
 
 		promise.then(
 			() => {
+				//	TODO !!!
+				// var user = _this.store.findRecord('users',_this.get('session.id'))
+
 				// 	Succes, redirect to dashboard
 				_this.transitionToRoute('user.dashboard');
 			},
@@ -35,6 +38,9 @@ export default Ember.Controller.extend({
 		);
 		
 
+    },
+    restore() {
+    	console.log("restoreeeeeeee");
     }
   }
 });

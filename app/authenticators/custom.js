@@ -2,14 +2,21 @@ import Ember from 'ember';
 import Base from 'ember-simple-auth/authenticators/base';
 
 export default Base.extend({
+    session: Ember.inject.service('session'),
     //tokenEndpoint: 'http://localhost:3001/sessions/create',
     //tokenEndpoint: 'http://node-test-backend.herokuapp.com/sessions/create',
     tokenEndpoint: 'https://orunginal-api.herokuapp.com/users/sign_in',
     restore: function(data) {
         console.log("[DEBUG:authenticators/custom.js::restore]");
+        var _this = this;
         return new Ember.RSVP.Promise(function(resolve, reject) {
             if (!Ember.isEmpty(data.token)) {
-                resolve(data);
+                Ember.run(function() {
+                    resolve(data);
+                });
+                _this.get('session').set('id', data.id);
+                _this.get('session').set('token', data.token);
+                _this.get('session').set('email', data.email);
             } else {
                 reject();
             }
@@ -36,16 +43,18 @@ export default Base.extend({
                 },
                 dataType: 'json' 
                 
-            }).then(function(response) {
-                console.log("response");
-                console.log(response);
+            }).then((response) => {
+                this.get('session').set('token',response.data.token);
+                this.get('session').set('id',response.data.id);
+                this.get('session').set('email',response.data.email);
                 Ember.run(function() {
                     resolve({
                         token: response.data.token,
-                        email: response.data.email
+                        email: response.data.email,
+                        id: response.data.id
                     });
                 });
-            }, function(xhr, status, error) {
+            }, (xhr, status, error) => {
                 console.log("status : "+status);
                 console.log("error : "+error);
                 console.log("response");

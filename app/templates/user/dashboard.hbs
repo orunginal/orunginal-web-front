@@ -1,3 +1,13 @@
 <h1>Bienvenu sur votre dashboard.hbs</h1>
 
+<ul>
+{{#each model as |user|}}
+	<li>
+		<div>{{user.email}}</div>
+		<div>{{user.token}}</div>
+		<div>{{user.id}}</div>
+	</li>
+{{/each}}
+</ul>
+
 {{outlet}}
