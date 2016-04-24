@@ -22,7 +22,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 		  	// on rejection
 		  	console.log('Fail :',reason);
 		});
-		if (false)
+		if (true)
 		{
 			console.log(user);
 			return user;

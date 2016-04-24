@@ -2,17 +2,15 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-	iduser: DS.attr('number'),
+    age: DS.attr('number'),
+    phone_number: DS.attr('number'),
 	//	Connection info
 	email: DS.attr('string'),
 	is_admin: DS.attr('boolean', { defaultValue: false }), //	Will transform string to bool
 
 	// 	Personal info
-  	firstname: DS.attr('string'),
-  	lastname: DS.attr('string'),
-  	fullname: Ember.computed('firstName', 'lastName', () => {
-    	return "${this.get('firstName')} ${this.get('lastName')}";
-  	}),
+  	name: DS.attr('string'),
+  	surname: DS.attr('string'),
   	urlphoto: DS.attr('string'),
   	createdat: DS.attr('date'),
 
