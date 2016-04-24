@@ -7,8 +7,8 @@
 	    <!-- Add the bg color to the header using any of the bg-* classes -->
 
             <div class="widget-user-header ">
-              <h3 class="widget-user-username">Quentin Bayart</h3>
-              <h5 class="widget-user-desc">Co-Founder & Product Owner</h5>
+              <h3 class="widget-user-username">{{model.surname}}</h3>
+              <h5 class="widget-user-desc">{{model.name}}</h5>
             </div>
 
             <div class="widget-user-image">
@@ -41,10 +41,6 @@
 
 		</div><!-- /.widget-user -->
 
-        <p>Hi {{session.email}},</p>
-		<br/>
-		<p>You can't see this text unless you're logged in!</p>
-		<br/>
         
         {{outlet}}
 

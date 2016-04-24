@@ -5,38 +5,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 	session: Ember.inject.service(),
 
 	model() {
-		// $.ajaxSetup({
-		//   crossDomain: true,
-		//   xhrFields: {
-		//     withCredentials: true
-		//   }
-		// });
-		console.log('Fetching user..');
-		console.log(this.get('session.user_id'));
-		var user = this.store.findRecord('user', 11);
-
-		user.then((value) => {
-		  	// on fulfillment
-		  	console.log('Sucess :',value);
-		}, (reason) => {
-		  	// on rejection
-		  	console.log('Fail :',reason);
-		});
-		if (true)
-		{
-			console.log(user);
-			return user;
-		}
-		else
-		{
-			return [{
-				'user_id': this.get('session.user_id'),
-				'email': this.get('session.email'),
-				'token': this.get('session.token'),
-				'is_admin': this.get('session.is_admin')
-			}];
-		}
-		
+		return this.store.findRecord('user', this.get('session.id'));
 	},
 
 	beforeModel(transition) {
@@ -57,9 +26,11 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 		Ember.$(window).bind('scroll', function() {
 			Ember.$('.navbar-default').addClass('on');
 		});
-	}
+	},
 
-	// afterModel() {
-	// 	console.log(model());
-	// }
+	afterModel(model) {
+		console.log(model.get('email'));
+		console.log(model.get('name'));
+		console.log(model.get('surname'));
+	}
 });

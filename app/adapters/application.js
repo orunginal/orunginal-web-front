@@ -11,6 +11,11 @@ export default DS.JSONAPIAdapter.extend({
 		user_id: 11,
 	 	token: 'zkcYq3mHooh9-9j1Z2f6',
 	 	accept: 'application/json'
+	},
+
+	find: (store, type, id) => {
+		console.log('CUSTOM!!!');
+		return this._super(store, type, id);
 	}
 
 	// headers: Ember.computed('session.user_id', 'session.token', () => {
