@@ -11,7 +11,10 @@ Router.map(function() {
   this.route('page-not-found', { path: '/*wildcard'});
 
   this.route('user', function() {
-    this.route('dashboard');
+    this.route('dashboard', function() {
+      this.route('admin');
+      this.route('customer');
+    });
   });
 
   this.route('admin', function() {
