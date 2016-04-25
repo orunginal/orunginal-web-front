@@ -13,7 +13,7 @@ Router.map(function() {
   this.route('user', function() {
     this.route('dashboard', function() {
       this.route('admin');
-      this.route('customer');
+      this.route('circuits');
     });
   });
 

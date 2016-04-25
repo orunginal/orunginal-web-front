@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
 				}
 				else
 				{
-					_this.transitionToRoute('user.dashboard.customer');
+					_this.transitionToRoute('user.dashboard.circuits');
 				}
 			},
 
