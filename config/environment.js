@@ -19,15 +19,13 @@ module.exports = function(environment) {
     }
   };
 
-  // ENV['simple-auth'] = {
-  //   authorizer: 'simple-auth-authorizer:devise',
-  //   crossOriginWhitelist: ['https://orunginal-api.herokuapp.com/']
-  // }
 
-  // ENV['simple-auth-devise'] = {
-  //   tokenAttributeName: 'token',
-  //   identificationAttributeName: 'email'
-  // }
+  ENV.contentSecurityPolicy = {  
+    'script-src': "'self' 'unsafe-eval' https://*.googleapis.com https://*.gstatic.com",
+    'img-src': "'self' https://*.googleapis.com https://*.gstatic.com",
+    'font-src': "'self' https://*.gstatic.com",
+    'style-src': "'self' 'unsafe-inline' https://*.googleapis.com"
+  };
 
   ENV['simple-auth'] = {
     //store: 'simple-auth-session-store:local-storage',

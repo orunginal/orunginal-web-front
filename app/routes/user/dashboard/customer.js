@@ -11,7 +11,5 @@ export default Ember.Route.extend({
 			transition.abort();
 			this.transitionTo('user.dashboard.admin');
 		}
-
-
 	}
 });
