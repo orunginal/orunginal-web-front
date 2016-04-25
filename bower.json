@@ -7,6 +7,7 @@
     "ember-qunit-notifications": "0.1.0",
     "bootstrap": "~3.3.5",
     "ember-simple-auth": "0.8.0",
-    "leaflet": "~0.7.7"
+    "leaflet": "~0.7.7",
+    "leaflet-plugins": "^1.6.0"
   }
 }

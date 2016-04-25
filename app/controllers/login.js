@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
 
 		var _this = this;
 
-		var promise = this.get('session').authenticate('authenticator:custom', "test@test.com", "password").catch((reason) => {
+		var promise = this.get('session').authenticate('authenticator:custom', "jeannot.parker@gmail.com", "password").catch((reason) => {
 			this.set('errorMessage', reason.error || reason);
 		});
 

@@ -3,6 +3,11 @@
     display: block;
 }
 
+#map {
+    height: 400px;
+    display: 500px;
+}
+
 /* Navigation */
 .menu-li{
 	text-decoration: none !important;

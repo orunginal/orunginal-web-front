@@ -1,21 +1,23 @@
 <h1>Historique</h1>
 
+<!-- <div id="map" class="leaflet-container">
+{{#leaflet-map lat="34.851939" lng="-82.399752" zoom=12}}
+    {{google-tile-layer type="ROADMAP" opacity=0.9}}
+{{/leaflet-map}}
+</div> -->
+
 <div class="row">
   <div class="col-md-4">
   </div><!-- /.col -->
   <div class="col-md-4">
 
     {{#each model.circuits as |circuit|}}
-        <div id="map">
+        <div>
             {{google-map latitude="34.851939" longitude="-82.399752" description=circuit.description distance=circuit.distance note=circuit.note title=circuit.title nbrun=circuit.title date=circuit.date}}
         </div>
     {{/each}}
 
     
-
-    <div id="map">
-      {{google-map latitude="34.851939" longitude="-82.399752"}}
-    </div>
 
   </div><!-- /.col -->
   <div class="col-md-4">
