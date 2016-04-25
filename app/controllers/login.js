@@ -30,11 +30,11 @@ export default Ember.Controller.extend({
 
 				if (_this.get('session.is_admin') === true)
 				{
-					_this.transitionToRoute('user.dashboard.admin');
+					_this.transitionToRoute('user.admin');
 				}
 				else
 				{
-					_this.transitionToRoute('user.dashboard.circuits');
+					_this.transitionToRoute('user.circuits');
 				}
 			},
 

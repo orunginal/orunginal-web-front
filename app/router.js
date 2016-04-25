@@ -10,16 +10,11 @@ Router.map(function() {
   this.route('sign_up');
   this.route('page-not-found', { path: '/*wildcard'});
 
-  this.route('user', function() {
-    this.route('dashboard', function() {
-      this.route('admin');
-      this.route('circuits');
-    });
+  this.route('user', { path: '/users/:user_id' }, function() {
+    this.route('admin');
+    this.route('circuits');
   });
 
-  this.route('admin', function() {
-    this.route('users');
-  });
   this.route('contact');
   this.route('inscription');
 });
