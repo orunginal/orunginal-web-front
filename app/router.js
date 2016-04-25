@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('sign_up');
   this.route('page-not-found', { path: '/*wildcard'});
 
-  this.route('user', { path: '/users/:user_id' }, function() {
+  this.route('user', function() {
     this.route('admin');
     this.route('circuits');
   });

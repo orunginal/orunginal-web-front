@@ -15,9 +15,9 @@ export default DS.Model.extend({
   	surname: DS.attr('string'),
     email: DS.attr('string'),
   	// urlphoto: DS.attr('string'),
-  	createdat: DS.attr('date')
+  	createdat: DS.attr('date'),
 
-  	// //	Relationships
-  	// circuits: DS.hasMany('circuit'),
+  	//	Relationships
+  	circuits: DS.hasMany('circuit')
   	// groups: DS.hasMany('group')
 });

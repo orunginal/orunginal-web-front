@@ -4,9 +4,9 @@
       <!-- .box-header -->
             <div class="box-header with-border">
               <div class="user-block">
-                <img class="img-circle" src="../../assets/img/team/quentin.jpg" alt="User Avatar">
-                <span class="username"><a href="#">Crée par Pich</a></span>
-                <span class="description">Petit circuit autour de la tête d'Or - 7:30 PM Today</span>
+                <!-- <img class="img-circle" src="../../assets/img/team/quentin.jpg" alt="User Avatar"> -->
+                <span class="username"><a href="#">{{title}}</a></span>
+                <span class="description">Distance : {{distance}} - Note : {{note}} - Date : {{date}}</span>
               </div>
               <!-- /.user-block -->
               <div class="box-tools">
@@ -20,7 +20,7 @@
               <!-- <img alt="Photo" src="../../assets/img/team/pich.jpg" class="img-responsive pad"> -->
 
               <div class="map-canvas"></div>
-              <span class="pull-right text-muted">Courru 3 fois</span>
+              <span class="pull-right text-muted">Courru {{nbrun}} fois</span>
             </div>
             <!-- /.box-body -->
 
@@ -29,11 +29,10 @@
               <div class="box-comment">
 
                 <div class="comment-text">
-                      <span class="username">
-                        Description
-                      </span><!-- /.username -->
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
+                  <span class="username">
+                    Description
+                  </span><!-- /.username -->
+                  {{description}}
                 </div>
                 <!-- /.comment-text -->
               </div>

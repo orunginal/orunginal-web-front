@@ -33,6 +33,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 		console.log(model.get('name'));
 		console.log(model.get('surname'));
 		console.log(model.get('age'));
-		console.log(model.get('totaldistance'));
+		// model.get('circuits').then((circuits) => {
+		// 	// for each (var circuit in circuits) {
+		// 	console.log(circuits[0].get('description'));
+		// 	// }
+		// });
 	}
 });
