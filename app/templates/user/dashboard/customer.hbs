@@ -1,65 +1,25 @@
 
-
-<div id="map" class="">
-  <h2 id="title">My Map Component</h2>
-  {{google-map latitude="34.851939" longitude="-82.399752"}}
-</div>
-
-<div id="map" class="">
-  <h2 id="title">My Map Component</h2>
-  {{google-map latitude="34.851939" longitude="-82.399752"}}
-</div>
-
-
 <div class="row">
-    <div class="col-sm-4 border-right">
-    </div><!-- /.col -->
-    <div class="col-sm-4 border-right">
-		<div class="box box-primary">
-      <!-- .box-header -->
-            <div class="box-header with-border">
-              <div class="user-block">
-                <img class="img-circle" src="../../assets/img/team/quentin.jpg" alt="User Avatar">
-                <span class="username"><a href="#">Crée par Pich</a></span>
-                <span class="description">Petit circuit autour de la tête d'Or - 7:30 PM Today</span>
-              </div>
-              <!-- /.user-block -->
-              <div class="box-tools">
-                <button data-widget="collapse" class="btn btn-box-tool" type="button"><i class="fa fa-minus"></i>
-                </button>
-              </div>
-              <!-- /.box-header -->
-            </div>
-            <!-- .box-body -->
-            <div class="box-body">
-              <!-- <img alt="Photo" src="../../assets/img/team/pich.jpg" class="img-responsive pad"> -->
+  <div class="col-md-4">
+  </div><!-- /.col -->
+  <div class="col-md-4">
 
-              
-              <span class="pull-right text-muted">Courru 3 fois</span>
-            </div>
-            <!-- /.box-body -->
+    <div id="map">
+      {{google-map latitude="34.851939" longitude="-82.399752"}}
+    </div>
 
-            <!-- .box-comment -->
-            <div class="box-footer box-comments">
-              <div class="box-comment">
+    <div id="map">
+      {{google-map latitude="34.851939" longitude="-82.399752"}}
+    </div>
 
-                <div class="comment-text">
-                      <span class="username">
-                        Description
-                      </span><!-- /.username -->
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                </div>
-                <!-- /.comment-text -->
-              </div>
-              <!-- /.box-comment -->
-            </div>
+  </div><!-- /.col -->
+  <div class="col-md-4">
+  </div><!-- /.col -->
+</div><!-- /.row -->
 
-          </div>
-    </div><!-- /.col -->
-    <div class="col-sm-4">
-    </div><!-- /.col -->
-  </div><!-- /.row -->
+
+
+
 
 {{outlet}}
 
