@@ -8,7 +8,7 @@
 
             <div class="widget-user-header ">
               <h3 class="widget-user-username">{{model.surname}}</h3>
-              <h5 class="widget-user-desc">{{model.name}}</h5>
+              <h5 class="widget-user-desc">{{model.name}} inscrit le {{model.createdat}}</h5>
             </div>
 
             <div class="widget-user-image">
@@ -20,19 +20,19 @@
                   	<div class="col-sm-1 border-right"/>
                     <div class="col-sm-3 border-right">
                       <div class="description-block">
-                        <h5 class="description-header">3,200</h5>
+                        <h5 class="description-header">{{model.totaldistance}}</h5>
                         <span class="description-text">KM</span>
                       </div><!-- /.description-block -->
                     </div><!-- /.col -->
                     <div class="col-sm-4 border-right">
                       <div class="description-block">
-                        <h5 class="description-header">13,000</h5>
+                        <h5 class="description-header">{{model.circuitsnumber}}</h5>
                         <span class="description-text">PARCOURS</span>
                       </div><!-- /.description-block -->
                     </div><!-- /.col -->
                     <div class="col-sm-3">
                       <div class="description-block">
-                        <h5 class="description-header">35</h5>
+                        <h5 class="description-header">{{model.totaltime}}</h5>
                         <span class="description-text">HEURES</span>
                       </div><!-- /.description-block -->
                     </div><!-- /.col -->
