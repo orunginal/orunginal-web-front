@@ -4,6 +4,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   distance: DS.attr('number'),
   note: DS.attr('number'),
+  title: DS.attr('string'),
   description: DS.attr('string'),
   //time: DS.attr('number'),
   // createdat: DS.attr('date'),

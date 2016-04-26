@@ -41,7 +41,7 @@ export default Base.extend({
                 },
                 beforeSend: (request) => {
                     request.setRequestHeader('Accept', 'application/json');
-                    // request.setRequestHeader('api_key', 'change_me_at_prod1');
+                    request.setRequestHeader('api_key', 'change_me_at_prod1');
                 },
                 crossDomain: true,
                 dataType: 'json' 

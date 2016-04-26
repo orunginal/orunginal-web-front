@@ -29,10 +29,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 	},
 
 	afterModel(model) {
-		console.log(model.get('email'));
-		console.log(model.get('name'));
-		console.log(model.get('surname'));
-		console.log(model.get('age'));
+		console.log('email', model.get('email'));
+		console.log('name', model.get('name'));
+		console.log('surname', model.get('surname'));
+		console.log('age', model.get('age'));
 		// model.get('circuits').then((circuits) => {
 		// 	// for each (var circuit in circuits) {
 		// 	console.log(circuits[0].get('description'));

@@ -6,43 +6,51 @@
 	    <div class="box box-widget widget-user bg-aqua-active">
 	    <!-- Add the bg color to the header using any of the bg-* classes -->
 
-            <div class="widget-user-header ">
-              <h3 class="widget-user-username">{{model.surname}}</h3>
-              <h5 class="widget-user-desc">{{model.name}} inscrit le {{model.createdat}}</h5>
-            </div>
+        <div class="widget-user-header ">
+          <h3 class="widget-user-username">{{model.name}} {{model.surname}}</h3>
+          <h5 class="widget-user-desc">admin</h5>
+        </div>
 
-            <div class="widget-user-image">
-              <img class="img-circle" src="assets/img/team/quentin.jpg" alt="User Avatar">
-            </div>
+        <div class="widget-user-image">
+          <img class="img-circle" src="assets/img/team/quentin.jpg" alt="User Avatar">
+        </div>
 
-                <div class="box-footer">
-                  <div class="row">
-                  	<div class="col-sm-1 border-right"/>
-                    <div class="col-sm-3 border-right">
-                      <div class="description-block">
-                        <h5 class="description-header">{{model.totaldistance}}</h5>
-                        <span class="description-text">KM</span>
-                      </div><!-- /.description-block -->
-                    </div><!-- /.col -->
-                    <div class="col-sm-4 border-right">
-                      <div class="description-block">
-                        <h5 class="description-header">{{model.circuitsnumber}}</h5>
-                        <span class="description-text">PARCOURS</span>
-                      </div><!-- /.description-block -->
-                    </div><!-- /.col -->
-                    <div class="col-sm-3">
-                      <div class="description-block">
-                        <h5 class="description-header">{{model.totaltime}}</h5>
-                        <span class="description-text">HEURES</span>
-                      </div><!-- /.description-block -->
-                    </div><!-- /.col -->
-                  </div><!-- /.row -->
-                </div>
+        <div class="box-footer">
+          <div class="row">
+          	<div class="col-sm-1 border-right"/>
+            <div class="col-sm-3 border-right">
+              <div class="description-block">
+                <h5 class="description-header">{{model.totaldistance}}</h5>
+                <span class="description-text">KM</span>
+              </div><!-- /.description-block -->
+            </div><!-- /.col -->
+            <div class="col-sm-4 border-right">
+              <div class="description-block">
+                <h5 class="description-header">{{model.circuitsnumber}}</h5>
+                <span class="description-text">PARCOURS</span>
+              </div><!-- /.description-block -->
+            </div><!-- /.col -->
+            <div class="col-sm-3">
+              <div class="description-block">
+                <h5 class="description-header">{{model.totaltime}}</h5>
+                <span class="description-text">HEURES</span>
+              </div><!-- /.description-block -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div>
 
 		</div><!-- /.widget-user -->
 
+    <div class="navbar-collapse table" >
+      <ul class="nav navbar-nav horizontal-list">
+          {{#if model.is_admin}}
+          <li>{{#link-to "user.admin"}}<a class="menu-li">Liste des utilisateurs</a>{{/link-to}}</li>
+          {{/if}}
+          <li>{{#link-to "user.circuits"}}<a class="menu-li">Historique des parcours</a>{{/link-to}}</li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
         
-        {{outlet}}
+    {{outlet}}
 
     </div>
 </div>
