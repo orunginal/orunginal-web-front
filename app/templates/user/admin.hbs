@@ -1,3 +1,22 @@
 <h1>Liste des utilisateurs</h1>
 
+<div class="row">
+  <div class="col-md-4">
+  </div><!-- /.col -->
+  <div class="col-md-4">
+
+    {{#each model as |user|}}
+    <div>
+        {{user-li name=user.name surname=user.surname email=user.email createdat=user.createdat}}
+    </div>
+	{{/each}}
+
+    
+
+  </div><!-- /.col -->
+  <div class="col-md-4">
+  </div><!-- /.col -->
+</div><!-- /.row -->
+
+
 {{outlet}}
