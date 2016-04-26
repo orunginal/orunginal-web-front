@@ -1,30 +1,33 @@
 import Ember from 'ember';
-import DS from 'ember-data';
+import JSONAPIAdapter from 'ember-data/adapters/json-api';
 
 
-export default DS.JSONAPIAdapter.extend({
+export default JSONAPIAdapter.extend({
 	session: Ember.inject.service('session'),
 
 	host: 'https://orunginal-api.herokuapp.com',
 
 	headers : {
-		user_id: 11,
-	 	token: 'zkcYq3mHooh9-9j1Z2f6',
+		user_id: 22,
+	 	token: 'TpGDH8uJfyn8sfay9rtA',
+	 	api_key: 'change_me_at_prod1',
 	 	accept: 'application/json'
-	},
-
-	find: (store, type, id) => {
-		console.log('CUSTOM!!!');
-		return this._super(store, type, id);
 	}
-
-	// headers: Ember.computed('session.user_id', 'session.token', () => {
-	// 	var _this = this;
+	// headers: Ember.computed('session.id', 'session.token', () => {
  //    	return {
- //    		crossDomain: true,
-	// 		user_id: _this.get('session.user_id'),
-	// 		token: _this.get('session.token')
+	// 		'user_id': this.get('session.id'),
+	// 		'token': this.get('session.token'),
+	// 		'api_key': 'change_me_at_prod1',
+	//  		'accept': 'application/json'
  //    	};
  //  	})
+
+
+	// find: (store, type, id) => {
+	// 	console.log('CUSTOM!!!');
+	// 	return this._super(store, type, id);
+	// }
+
+	
 
 });
