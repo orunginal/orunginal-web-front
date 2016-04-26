@@ -14,6 +14,6 @@ export default DS.Model.extend({
   // }),
 
   //	Relationships
-  user: DS.belongsTo('user')
-  //points: DS.hasMany('point')
+  user: DS.belongsTo('user'),
+  points: DS.hasMany('point')
 });
