@@ -9,7 +9,7 @@ export default Ember.Route.extend({
 		var isadmin = this.get('session.is_admin');
 		if(isadmin === false){
 			transition.abort();
-			this.transitionTo('user.dashboard.circuits');
+			this.transitionTo('user.circuits');
 		}
 	},
 
